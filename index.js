@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const mongoose= require("mongoose");
+const {createProduct,getAllProducts,DeleteProducts,updateProduct} = require("./ProductOperations");
 app.use(express.json());
 
 /*
@@ -38,6 +40,19 @@ app.post("/api/Furniture", function (req, res) {
 });
 
 */
-
+//connect to mongoose
+mongoose.connect("mongodb://localhost/mernstack").then(async ()=>{
+    console.log("connnection to mongo");
+//    let product = await createProduct("Sofa",5000,"BlueVelvet");
+//    console.log(product);
+//    let allProducts = await getAllProducts();
+//    console.log(allProducts);
+//    let delProduct=await DeleteProducts("656cc613f7571e2447a2340b");
+//    console.log(delProduct);
+let updProducts = updateProduct("656cc6cb5842a48147400781","Stool",2000,"Wooden");
+    console.log(updProducts);
+}).catch(err=>{
+    console.log("not connected to mongo",err);
+})
 //Port added
 app.listen(3000)
