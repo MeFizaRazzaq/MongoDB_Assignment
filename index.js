@@ -4,7 +4,7 @@ const mongoose= require("mongoose");
 const {createProduct,getAllProducts,DeleteProducts,updateProduct} = require("./ProductOperations");
 app.use(express.json());
 
-/*
+
 const Furniture=["Chair","Table","Bed","Sofa","cuboard"];
 
 app.get("/", function (req, res) {
@@ -12,7 +12,7 @@ app.get("/", function (req, res) {
 })
 
 app.get("/api/Furniture",function(req,res){
-    res.send(Furniture);
+    res.render(Furniture);
 })
 
 app.get("/api/Furniture/:index",function(req,res){
@@ -39,7 +39,7 @@ app.post("/api/Furniture", function (req, res) {
     res.send(Furniture);
 });
 
-*/
+
 //connect to mongoose
 mongoose.connect("mongodb://localhost/mernstack").then(async ()=>{
     console.log("connnection to mongo");
