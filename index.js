@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+
+/*
 const Furniture=["Chair","Table","Bed","Sofa","cuboard"];
 
 app.get("/", function (req, res) {
@@ -34,6 +36,8 @@ app.post("/api/Furniture", function (req, res) {
     products.push(req.body.name);
     res.send(Furniture);
 });
+
+*/
 
 //Port added
 app.listen(3000)
